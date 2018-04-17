@@ -7,3 +7,7 @@ object P05 extends App{
     case _ => sys.error("error")
   }
 }
+
+/*
+def reverse[T](list: List[T]): List[T] = list.foldLeft(Nil: List[T]){(acc, x) => x :: acc}
+*/

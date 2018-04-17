@@ -6,3 +6,7 @@ object P04 {
     case _ :: tail => length(tail) + 1
   }
 }
+
+/*
+def length[T](list: List[T]): Int = list.foldRight(0){(x, acc) => acc + 1}
+*/

@@ -7,3 +7,7 @@ object P01 {
     case _ => sys.error("error")
   }
 }
+
+/*
+def last[T](list: List[T]): T = list.tail.foldLeft(list.head){(acc, x) => x}
+*/

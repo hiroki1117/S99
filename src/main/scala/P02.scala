@@ -7,3 +7,4 @@ object P02 {
     case _ => sys.error("error")
   }
 }
+
