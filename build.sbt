@@ -1,5 +1,9 @@
 import Dependencies._
 
+val libs = Seq(
+	"org.scalactic" %% "scalactic" % "3.0.5",
+	"org.scalatest" %% "scalatest" % "3.0.5" % "test")
+
 lazy val root = (project in file(".")).
   settings(
     inThisBuild(List(
@@ -8,5 +12,5 @@ lazy val root = (project in file(".")).
       version      := "0.1.0-SNAPSHOT"
     )),
     name := "s99",
-    libraryDependencies += scalaTest % Test
+    libraryDependencies ++= libs
   )
