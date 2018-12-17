@@ -16,4 +16,8 @@ class PSpec extends FlatSpec {
 		P02.penultimate(list) should be (19)
 	}
 
+	"P03" should "find the Kth element of a list" in {
+		P03.nth(5, list) should be (6)
+	}
+
 }
