@@ -6,6 +6,12 @@ object P01 {
     case _ :: tail => last(tail)
     case _ => sys.error("error")
   }
+
+  def lastOption[T](list: List[T]): Option[T] = list match {
+    case x :: Nil => Some(x)
+    case _ :: tail => lastOption(tail)
+    case _ => None
+  }
 }
 
 /*
