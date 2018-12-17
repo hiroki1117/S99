@@ -12,4 +12,8 @@ class PSpec extends FlatSpec {
 		P01.last(list) should be (20)
 	}
 
+	"P02" should "find the second element from last" in {
+		P02.penultimate(list) should be (19)
+	}
+
 }
