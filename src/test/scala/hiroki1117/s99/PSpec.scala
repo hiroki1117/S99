@@ -23,7 +23,15 @@ class PSpec extends FlatSpec {
 		P04.length(list) should be (list.length)
 	}
 
-	it should "be List.length with tailRecVer" in {
+	it should "be List.length with tailRec" in {
 		P04.lengthTailRec(list) should be (list.length)
+	}
+
+	"P05" should "be List.reverse" in {
+		P05.reverse(list) should be (list.reverse)
+	}
+
+	it should "be List.reverse with TailRec" in {
+		P05.reverseTailRec(list) should be (list.reverse)
 	}
 }
