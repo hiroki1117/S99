@@ -1,4 +1,4 @@
-//List
+package hiroki1117.s99
 
 object P04 {
   def length[T](list: List[T]): Int = list match{

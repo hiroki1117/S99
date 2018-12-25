@@ -1,4 +1,4 @@
-//List
+package hiroki1117.s99
 
 object P03 {
   def nth[T](n: Int, list: List[T]): T = list match {  //list(n-1)

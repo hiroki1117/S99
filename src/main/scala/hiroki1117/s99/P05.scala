@@ -1,4 +1,4 @@
-//List
+package hiroki1117.s99
 
 object P05 extends App{
   def reverse[T](list: List[T]): List[T] = list match {

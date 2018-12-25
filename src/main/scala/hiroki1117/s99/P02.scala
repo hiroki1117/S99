@@ -1,4 +1,4 @@
-//List
+package hiroki1117.s99
 
 object P02 {
   def penultimate[T](list: List[T]): T = list match{    //list.init.last

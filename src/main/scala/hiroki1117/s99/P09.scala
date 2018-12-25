@@ -1,4 +1,4 @@
-
+package hiroki1117.s99
 
 object P09{
 
