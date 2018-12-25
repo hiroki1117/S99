@@ -1,8 +1,7 @@
+package hiroki1117.s99
 
 import org.scalatest._
 import Matchers._
-
-
 
 class PSpec extends FlatSpec {
 
@@ -20,4 +19,11 @@ class PSpec extends FlatSpec {
 		P03.nth(5, list) should be (6)
 	}
 
+	"P04" should "be List.length" in {
+		P04.length(list) should be (list.length)
+	}
+
+	it should "be List.length with tailRecVer" in {
+		P04.lengthTailRec(list) should be (list.length)
+	}
 }
