@@ -34,4 +34,12 @@ class PSpec extends FlatSpec {
 	it should "be List.reverse with TailRec" in {
 		P05.reverseTailRec(list) should be (list.reverse)
 	}
+
+	"P06" should "be true" in {
+		P06.isPalindrome(List(1,2,3,3,2,1)) should be (true)
+	}
+
+	it should "be false" in {
+		P06.isPalindrome(list) should be (false)
+	}
 }
