@@ -69,4 +69,8 @@ class PSpec extends FlatSpec {
 		val encodedList = P10.encode(duplicateList)
 		P12.decode(encodedList) should be (duplicateList)
 	}
+
+	"P13" should "turn duplicates list into tuple (Num, Element)" in {
+		P13.encodeDirect(duplicateList) should be (List((3,1), (2,2), (1,3), (1,4), (2,5)))
+	}
 }
