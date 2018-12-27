@@ -6,6 +6,7 @@ import Matchers._
 class PSpec extends FlatSpec {
 
 	val list = (1 to 20).toList
+	val charList = List('a', 'b', 'c', 'c', 'd')
 	val duplicateList = List(1,1,1,2,2,3,4,5,5)
 
 	
@@ -75,7 +76,10 @@ class PSpec extends FlatSpec {
 	}
 
 	"P14" should "duplicate the elements of a list" in {
-		val l = List('a', 'b', 'c', 'c', 'd')
-		P14.duplicate(l) should be (List('a', 'a', 'b', 'b', 'c', 'c', 'c', 'c', 'd', 'd'))
+		P14.duplicate(charList) should be (List('a', 'a', 'b', 'b', 'c', 'c', 'c', 'c', 'd', 'd'))
+	}
+
+	"P15" should "duplicate the elements of a list a given number of times" in {
+		P15.duplicateN(3, charList) should be (List('a', 'a', 'a', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd'))
 	}
 }
