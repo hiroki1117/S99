@@ -82,4 +82,8 @@ class PSpec extends FlatSpec {
 	"P15" should "duplicate the elements of a list a given number of times" in {
 		P15.duplicateN(3, charList) should be (List('a', 'a', 'a', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd'))
 	}
+
+	"P16" should "drop every Nth element from a list" in {
+		P16.drop(2, charList) should be (List('a', 'c', 'd'))
+	}	
 }
