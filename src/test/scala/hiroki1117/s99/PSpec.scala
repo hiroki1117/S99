@@ -85,5 +85,10 @@ class PSpec extends FlatSpec {
 
 	"P16" should "drop every Nth element from a list" in {
 		P16.drop(2, charList) should be (List('a', 'c', 'd'))
-	}	
+	}
+
+	"P17" should "split a list into two parts" in {
+		val answer = ((1 to 10 toList), (11 to 20 toList))
+		P17.split(10, list) should be (answer)
+	}
 }
