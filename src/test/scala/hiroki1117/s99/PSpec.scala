@@ -91,4 +91,8 @@ class PSpec extends FlatSpec {
 		val answer = ((1 to 10 toList), (11 to 20 toList))
 		P17.split(10, list) should be (answer)
 	}
+
+	"P18" should "extract a slice between Ith and Kth from a List" in {
+		P18.slice(8, 13, list) should be ((9 to 13).toList)
+	}
 }
