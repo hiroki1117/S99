@@ -95,4 +95,8 @@ class PSpec extends FlatSpec {
 	"P18" should "extract a slice between Ith and Kth from a List" in {
 		P18.slice(8, 13, list) should be ((9 to 13).toList)
 	}
+
+	"P19" should "rotate a list N places to the left" in {
+		P19.rotate(3, charList) should be (List('c', 'd', 'a', 'b', 'c'))
+	}
 }
