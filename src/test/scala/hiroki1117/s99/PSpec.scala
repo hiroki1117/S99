@@ -99,4 +99,8 @@ class PSpec extends FlatSpec {
 	"P19" should "rotate a list N places to the left" in {
 		P19.rotate(3, charList) should be (List('c', 'd', 'a', 'b', 'c'))
 	}
+
+	"P20" should "remove the 3th element" in {
+		P20.removeAt(2, charList) should be (('a' to 'd').toList)
+	}
 }
