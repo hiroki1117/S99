@@ -103,4 +103,8 @@ class PSpec extends FlatSpec {
 	"P20" should "remove the 3th element" in {
 		P20.removeAt(2, charList) should be (('a' to 'd').toList)
 	}
+
+	"P21" should "insert an element at a given position into a list" in {
+		P21.insertAt('z', 2, charList) should be (List('a', 'b', 'z', 'c', 'c', 'd'))
+	}
 }
