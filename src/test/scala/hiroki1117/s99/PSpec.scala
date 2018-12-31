@@ -107,4 +107,8 @@ class PSpec extends FlatSpec {
 	"P21" should "insert an element at a given position into a list" in {
 		P21.insertAt('z', 2, charList) should be (List('a', 'b', 'z', 'c', 'c', 'd'))
 	}
+
+	"P22" should "create a list containing all integers within a given range" in {
+		P22.range(1, 20) should be (list)
+	}
 }
