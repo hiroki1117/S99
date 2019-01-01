@@ -111,4 +111,7 @@ class PSpec extends FlatSpec {
 	"P22" should "create a list containing all integers within a given range" in {
 		P22.range(1, 20) should be (list)
 	}
+
+	"P23" should "extract a given number of randomly selected elements from a list" in {
+	}
 }
