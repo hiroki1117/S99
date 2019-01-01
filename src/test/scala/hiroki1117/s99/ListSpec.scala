@@ -3,7 +3,7 @@ package hiroki1117.s99
 import org.scalatest._
 import Matchers._
 
-class PSpec extends FlatSpec {
+class ListSpec extends FlatSpec {
 
 	val list = (1 to 20).toList
 	val charList = List('a', 'b', 'c', 'c', 'd')
