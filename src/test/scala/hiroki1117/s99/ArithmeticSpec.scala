@@ -13,4 +13,8 @@ class ArithmeticSpec extends FlatSpec {
   "P32" should "Determine the greatest common divisor of two positive integer numbers" in {
     S99Int.gcd(36, 63) should be (9)
   }
+
+  "P33" should "Determine whether two positive integer numbers are coprime" in {
+    35.isCoprimeTo(64) should be (true)
+  }
 }

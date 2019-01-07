@@ -5,6 +5,8 @@ package object s99 {
     import S99Int._
 
     def isPrime: Boolean = !(value<=1)&&(2 to value-1).forall(value%_!=0)
+
+    def isCoprimeTo(n: Int): Boolean = if(gcd(value, n)==1) true else false
   }
 
   object S99Int {
