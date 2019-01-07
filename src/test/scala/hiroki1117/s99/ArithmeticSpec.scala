@@ -9,4 +9,8 @@ class ArithmeticSpec extends FlatSpec {
   "P31" should "determine whether a given integer number is prime" in {
     7.isPrime should be (true)
   }
+
+  "P32" should "Determine the greatest common divisor of two positive integer numbers" in {
+    S99Int.gcd(36, 63) should be (9)
+  }
 }
