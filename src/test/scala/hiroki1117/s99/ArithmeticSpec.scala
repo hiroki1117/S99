@@ -17,4 +17,8 @@ class ArithmeticSpec extends FlatSpec {
   "P33" should "Determine whether two positive integer numbers are coprime" in {
     35.isCoprimeTo(64) should be (true)
   }
+
+  "P34" should "equals Euler's totient function" in {
+    10.totient should be (4)
+  }
 }
