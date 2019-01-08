@@ -1,5 +1,7 @@
 package hiroki1117.s99
 
+import scala.collection.mutable.ListBuffer
+
 package object s99 {
   implicit class S99Int(val value: Int) {
     import S99Int._
@@ -10,6 +12,18 @@ package object s99 {
 
     //オイラーのトーシェント関数
     def totient: Int = (1 to value-1).filter(gcd(value,_)==1).length
+
+    def primeFactors: List[Int] = {
+      val result = ListBuffer.empty[Int]
+      var acc = value
+      for(i <- 2 to value) {
+        while(acc%i==0){
+          result += i
+          acc = acc/i
+        }
+      }
+      result.toList
+    }
   }
 
   object S99Int {
