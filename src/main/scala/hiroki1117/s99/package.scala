@@ -24,6 +24,8 @@ package object s99 {
       }
       result.toList
     }
+
+    def primeFactorMultiplicity: List[(Int,Int)] = P10.encode(primeFactors).map(_.swap)
   }
 
   object S99Int {

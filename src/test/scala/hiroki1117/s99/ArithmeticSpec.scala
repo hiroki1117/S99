@@ -25,4 +25,8 @@ class ArithmeticSpec extends FlatSpec {
   "P35" should "Determine the prime factors of a given positive integer" in {
     315.primeFactors should be (List(3,3,5,7))
   }
+
+  "P36" should "Determine the prime factors of a given positive integer (2)" in {
+    315.primeFactorMultiplicity should be (List((3,2),(5,1),(7,1)))
+  }
 }
