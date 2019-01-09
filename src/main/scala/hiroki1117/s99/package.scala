@@ -26,6 +26,8 @@ package object s99 {
     }
 
     def primeFactorMultiplicity: List[(Int,Int)] = P10.encode(primeFactors).map(_.swap)
+
+    def totient2: Int = primeFactorMultiplicity.foldLeft(1){(acc, x) => (x._1-1)*Math.pow(x._1, x._2-1).toInt*acc}
   }
 
   object S99Int {

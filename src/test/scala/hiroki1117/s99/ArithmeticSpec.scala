@@ -29,4 +29,8 @@ class ArithmeticSpec extends FlatSpec {
   "P36" should "Determine the prime factors of a given positive integer (2)" in {
     315.primeFactorMultiplicity should be (List((3,2),(5,1),(7,1)))
   }
+
+  "P37" should "calculate Euler's totient function2" in {
+    10.totient should be (4)
+  }
 }
