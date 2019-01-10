@@ -33,4 +33,8 @@ class ArithmeticSpec extends FlatSpec {
   "P37" should "calculate Euler's totient function2" in {
     10.totient should be (4)
   }
+
+  "P39" should "equald A list of prime numbers of given Range" in {
+    S99Int.listPrimesinRange(2 to 12) should be (List(2,3,5,7,11))
+  }
 }

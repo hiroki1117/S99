@@ -53,5 +53,7 @@ package object s99 {
           }
 
     def gcd(x:Int, y:Int):Int = if(y==0) x else gcd(y, x%y)
+
+    def listPrimesinRange(range: Range): List[Int] = primes.map(_.toInt).dropWhile(_<range.head).takeWhile(_<range.last).toList
   }
 }
