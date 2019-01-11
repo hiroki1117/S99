@@ -28,6 +28,8 @@ package object s99 {
     def primeFactorMultiplicity: List[(Int,Int)] = P10.encode(primeFactors).map(_.swap)
 
     def totient2: Int = primeFactorMultiplicity.foldLeft(1){(acc, x) => (x._1-1)*Math.pow(x._1, x._2-1).toInt*acc}
+
+    def goldbach: Option[(Int, Int)] = if(value%2==0) primes.map(_.toInt).find(x=>(value-x).isPrime).map(x => (x, value-x)) else None
   }
 
   object S99Int {

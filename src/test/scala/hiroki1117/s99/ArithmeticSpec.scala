@@ -37,4 +37,13 @@ class ArithmeticSpec extends FlatSpec {
   "P39" should "equald A list of prime numbers of given Range" in {
     S99Int.listPrimesinRange(2 to 12) should be (List(2,3,5,7,11))
   }
+
+  "P40" should "separate into prime pairs if the number is even" in {
+    28.goldbach should be (Some((5,23)))
+  }
+
+  it should "return None if the number is odd" in {
+    33.goldbach should be (None)
+  }
+
 }
