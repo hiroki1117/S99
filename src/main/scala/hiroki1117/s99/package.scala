@@ -58,4 +58,15 @@ package object s99 {
 
     def listPrimesinRange(range: Range): List[Int] = primes.map(_.toInt).dropWhile(_<range.head).takeWhile(_<range.last).toList
   }
+
+  sealed trait Tree[+T]
+  case class Node[+T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
+    override def toString = "T(" + value.toString + " " + left.toString + " " + right.toString + ")"
+  }
+  case object End extends Tree[Nothing] {
+    override def toString = "."
+  }
+  object Node {
+    def apply[T](value: T): Node[T] = Node(value, End, End)
+  }
 }
