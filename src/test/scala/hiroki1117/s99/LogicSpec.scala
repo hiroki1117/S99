@@ -67,4 +67,12 @@ class LogicSpec extends FlatSpec {
   it should "be false equ(true,false)" in {
     true equ false should be (false)
   }
+
+  "P49" should "be n-bit Gray Code if n=2" in {
+    P49.gray(2) should be (List("00","01","11","10"))
+  }
+
+  it should "be n-bit Gray Code if n = 3" in {
+    P49.gray(3) should be (List("000", "001", "011", "010", "110", "111", "101", "100"))
+  }
 }
