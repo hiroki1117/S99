@@ -75,4 +75,12 @@ class LogicSpec extends FlatSpec {
   it should "be n-bit Gray Code if n = 3" in {
     P49.gray(3) should be (List("000", "001", "011", "010", "110", "111", "101", "100"))
   }
+
+  "P50" should "be Huffman Code" in {
+    P50.huffman(List(("a", 45), ("b", 13), ("c", 12), ("d", 16), ("e", 9), ("f", 5))) should be (List(("a","0"), ("b","101"), ("c","100"), ("d","111"), ("e","1101"), ("f","1100")))
+  }
+
+  it should "be Nil if args eq Nil" in {
+    P50.huffman(Nil) should be (Nil)
+  }
 }
