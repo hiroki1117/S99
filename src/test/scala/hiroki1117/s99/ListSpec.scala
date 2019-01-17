@@ -114,4 +114,8 @@ class ListSpec extends FlatSpec {
 
 	"P23" should "extract a given number of randomly selected elements from a list" in {
 	}
+
+	"P26" should "generate the combinations of K distinct objects chosen from the N elements of a list" in {
+		P26.combinations(2,List("a","b","c")) should be (List(List("a", "b"),List("a", "c"),List("b", "c")))
+	}
 }
