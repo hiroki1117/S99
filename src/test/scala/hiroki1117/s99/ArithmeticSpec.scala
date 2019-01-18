@@ -26,6 +26,15 @@ class ArithmeticSpec extends FlatSpec {
     315.primeFactors should be (List(3,3,5,7))
   }
 
+  it should "turn 315 into List(3,5,37)" in {
+    555.primeFactors2 should be (List(3,5,37))
+  }
+
+  it should "be List() if 1" in {
+    1.primeFactors should be (List())
+    1.primeFactors2 should be (List())
+  }
+
   "P36" should "Determine the prime factors of a given positive integer (2)" in {
     315.primeFactorMultiplicity should be (List((3,2),(5,1),(7,1)))
   }

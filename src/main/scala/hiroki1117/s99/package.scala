@@ -25,6 +25,18 @@ package object s99 {
       result.toList
     }
 
+    def primeFactors2: List[Int] = {
+      def loop(num: Int,plist: Stream[Int], acc: List[Int]): List[Int] = {
+        if(num==1) acc
+        else {
+          plist match {
+            case h #:: t => if(num%h==0) loop(num/h, plist, h::acc) else loop(num, t, acc)
+          }
+        }
+      }
+      loop(value, primes.map(_.toInt), Nil).reverse
+    }
+
     def primeFactorMultiplicity: List[(Int,Int)] = P10.encode(primeFactors).map(_.swap)
 
     def totient2: Int = primeFactorMultiplicity.foldLeft(1){(acc, x) => (x._1-1)*Math.pow(x._1, x._2-1).toInt*acc}
