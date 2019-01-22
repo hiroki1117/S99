@@ -1,4 +1,4 @@
-package hiroki1117.s99
+package hiroki1117
 
 import scala.collection.mutable.ListBuffer
 
