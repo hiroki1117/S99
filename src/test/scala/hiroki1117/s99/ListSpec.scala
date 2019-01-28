@@ -9,6 +9,7 @@ class ListSpec extends FlatSpec {
 	val charList = List('a', 'b', 'c', 'c', 'd')
 	val duplicateList = List(1,1,1,2,2,3,4,5,5)
 	val symbolList = List(List('a, 'b, 'c), List('d, 'e), List('f, 'g, 'h), List('d, 'e), List('i, 'j, 'k, 'l), List('m, 'n), List('o))
+	val member = List("Aldo", "Beat", "Carla", "David", "Evi", "Flip", "Gary", "Hugo", "Ida")
 
 	
 	"P01" should "find the last" in {
@@ -119,6 +120,40 @@ class ListSpec extends FlatSpec {
 	"P26" should "generate the combinations of K distinct objects chosen from the N elements of a list" in {
 		P26.combinations(2,List("a","b","c")) should be (List(List("a", "b"),List("a", "c"),List("b", "c")))
 	}
+
+	"P27" should "be length 9 factorial with group3" in {
+		P27.group3(member).length should be ((1 to 9).product)
+	}
+
+	it should "be head like that with group3" in {
+		P27.group3(member).head should be (List(List("Aldo", "Beat"), List("Carla", "David", "Evi"), List("Flip", "Gary", "Hugo", "Ida")))
+	}
+
+	it should "be length 9 factrial with group" in {
+		P27.group(List(2,2,5), member).length should be ((1 to 9).product)
+	}
+
+	it should "be head like that with group" in {
+		P27.group(List(2,2,5), member).head should be (List(List("Aldo", "Beat"), List("Carla", "David"), List("Evi", "Flip", "Gary", "Hugo", "Ida")))
+	}
+
+	it should "be throw IllegalArgumentException if list length not equal 9" in {
+		a [IllegalArgumentException] should be thrownBy {
+			P27.group3(List())
+		}
+
+		a [IllegalArgumentException] should be thrownBy {
+			P27.group3_(List())
+		}
+
+		a [IllegalArgumentException] should be thrownBy {
+			P27.group(List(), member)
+		}
+
+		a [IllegalArgumentException] should be thrownBy {
+			P27.group(List(2,3,4), List())
+		}
+	} 
 
 	"P28" should "(a) sort by element of List length" in {
 		P28.lsort(symbolList) should be (List(List('o), List('d, 'e), List('d, 'e), List('m, 'n), List('a, 'b, 'c), List('f, 'g, 'h), List('i, 'j, 'k, 'l)))
