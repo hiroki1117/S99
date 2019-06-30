@@ -2,6 +2,7 @@ package hiroki1117.s99
 
 import org.scalatest._
 import Matchers._
+import scala.language.postfixOps
 
 class ListSpec extends FlatSpec {
 
