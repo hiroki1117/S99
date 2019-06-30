@@ -47,21 +47,21 @@ package object s99 {
   object S99Int {
     val primes: Stream[BigInt] = 2 #:: minus(Stream.iterate(3:BigInt)(_+1),joinL(primes.map{p => Stream.iterate(p*p)(_+p)}))
 
-    private def merge[A <% Ordered[A]](a:Stream[A], b:Stream[A]):Stream[A] = 
+    private def merge[A: Ordering](a:Stream[A], b:Stream[A]):Stream[A] =
         (a.headOption, b.headOption) match {
-          case (Some(x),Some(y)) if x<y => x #:: merge(a.tail,b)
-          case (Some(x),Some(y)) if x>y => y #:: merge(a, b.tail)
-          case (Some(x),Some(y)) if x==y => x #:: merge(a.tail, b.tail)
+          case (Some(x),Some(y)) if implicitly[Ordering[A]].lt(x,y) => x #:: merge(a.tail,b)
+          case (Some(x),Some(y)) if implicitly[Ordering[A]].gt(x,y) => y #:: merge(a, b.tail)
+          case (Some(x),Some(y)) if implicitly[Ordering[A]].equals(x,y) => x #:: merge(a.tail, b.tail)
           case (_, None) => a
           case _ => b
         }
 
-    private def joinL[A <% Ordered[A]](xs:Stream[Stream[A]]):Stream[A] = xs.head.head #:: merge(xs.head.tail, joinL(xs.tail))
+    private def joinL[A: Ordering](xs:Stream[Stream[A]]):Stream[A] = xs.head.head #:: merge(xs.head.tail, joinL(xs.tail))
 
-    private def minus[A <% Ordered[A]](a:Stream[A], b:Stream[A]):Stream[A] = 
+    private def minus[A : Ordering](a:Stream[A], b:Stream[A]):Stream[A] =
           (a.headOption, b.headOption) match {
-            case (Some(x), Some(y)) if x<y => x #:: minus(a.tail, b)
-            case (Some(x), Some(y)) if x>y => minus(a, b.tail)
+            case (Some(x), Some(y)) if implicitly[Ordering[A]].lt(x,y) => x #:: minus(a.tail, b)
+            case (Some(x), Some(y)) if implicitly[Ordering[A]].gt(x,y) => minus(a, b.tail)
             case (Some(x), Some(y)) => minus(a.tail, b.tail)
             case _ => a
           }
